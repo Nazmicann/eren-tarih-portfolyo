@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Eren Erdoğan - Tarih Arşivi Yönetim Paneli</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  </head>
+  <body>
+    <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+    
+    <script>
+      // Sağ taraftaki Canlı Önizleme ekranını sitenin orijinal CSS'i ile giydiriyoruz
+      CMS.registerPreviewStyle("https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap");
+      
+      CMS.registerPreviewStyle(`
+        body {
+          background-color: #0f172a !important;
+          color: #cbd5e1 !important;
+          font-family: 'Lora', serif !important;
+          padding: 24px !important;
+          line-height: 1.75 !important;
+        }
+        h1, h2, h3, h4 {
+          color: #f59e0b !important;
+          font-family: 'Cinzel', serif !important;
+          font-weight: 700 !important;
+          margin-top: 1.5rem !important;
+          margin-bottom: 0.5rem !important;
+          text-transform: uppercase !important;
+          letter-spacing: 0.05em !important;
+        }
+        h2 {
+          font-size: 1.5rem !important;
+          border-bottom: 1px solid rgba(245, 158, 11, 0.2) !important;
+          padding-bottom: 6px !important;
+        }
+        p {
+          margin-bottom: 1.25rem !important;
+        }
+        img {
+          border-radius: 12px !important;
+          border: 1px solid rgba(146, 64, 14, 0.4) !important;
+          box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.7) !important;
+          margin: 24px auto !important;
+          display: block !important;
+          max-width: 100% !important;
+          height: auto !important;
+        }
+        code {
+          background-color: rgba(255,255,255,0.1) !important;
+          padding: 2px 6px !important;
+          border-radius: 4px !important;
+          font-family: monospace !important;
+        }
+      `, { raw: true });
+    </script>
+  </body>
+</html>
