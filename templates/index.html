@@ -409,12 +409,17 @@ button:hover, a:hover {
             <h2 class="text-3xl font-bold text-center mb-2">Hemen Teklif Alın</h2>
             <p class="text-center text-gray-400 mb-8">Bilgilerinizi bırakın, uzmanlarımız size dönüş yapsın.</p>
             
-            <form name="contact" method="POST" data-netlify="true" class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <input type="text" name="name" placeholder="Ad Soyad" class="p-3 bg-gray-900 border border-gray-700 rounded-lg text-white" required>
-                <input type="text" name="company" placeholder="Firma Adı" class="p-3 bg-gray-900 border border-gray-700 rounded-lg text-white">
-                <input type="email" name="email" placeholder="E-posta" class="p-3 bg-gray-900 border border-gray-700 rounded-lg text-white col-span-1 md:col-span-2" required>
-                <button type="submit" class="col-span-1 md:col-span-2 py-4 bg-teal-500 hover:bg-teal-400 text-black font-bold rounded-lg transition-all">Gönder</button>
-            </form>
+<form name="contact" method="POST" action="/" data-netlify="true">
+    <!-- Bu gizli kutucuk, Netlify'ın formu tanıması için zorunludur -->
+    <input type="hidden" name="form-name" value="contact" />
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <input type="text" name="name" placeholder="Ad Soyad" class="p-3 bg-gray-900 border border-gray-700 rounded-lg text-white" required>
+        <input type="text" name="company" placeholder="Firma Adı" class="p-3 bg-gray-900 border border-gray-700 rounded-lg text-white">
+        <input type="email" name="email" placeholder="E-posta" class="p-3 bg-gray-900 border border-gray-700 rounded-lg text-white col-span-1 md:col-span-2" required>
+        <button type="submit" class="col-span-1 md:col-span-2 py-4 bg-teal-500 hover:bg-teal-400 text-black font-bold rounded-lg transition-all">Gönder</button>
+    </div>
+</form>
         </div>
     </div>
 </section>
