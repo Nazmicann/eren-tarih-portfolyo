@@ -1,7 +1,5 @@
----
-title: "Ali Bulut — Sovos Türkiye Kıdemli Satış Direktörü"
-Kamu Bilgi ve İletişim Teknolojileri Konferansı’ndaki "Dijital Dönüşümü Yönetmek" konulu konuşmasından:
+# Kamu Bilgi ve İletişim Teknolojileri Konferansı
 
-"Manuel işlemlerden, işlem bazlı ve otomatik sistemlere geçtik. Artık regülasyonlara uyumluluktan ziyade, 'ispata dayalı uyumluluk' ön plandadır."
+## "Dijital Dönüşümü Yönetmek"
 
----
+> "Manuel işlemlerden, işlem bazlı ve otomatik sistemlere geçtik. Artık regülasyonlara uyumluluktan ziyade, 'ispata dayalı uyumluluk' ön plandadır."
