@@ -397,19 +397,23 @@ button:hover, a:hover {
 
     <!-- 05. İletişim Alanı -->
     <!-- İletişim ve Güven Bölümü -->
+<!-- İletişim Formu (Stilli ve Çalışır Halde) -->
 <section id="iletisim" class="py-20 px-6">
     <div class="max-w-4xl mx-auto">
-        <!-- Güven / Uyumluluk Şeritleri -->
-        <div class="flex flex-wrap justify-center gap-12 mb-16 opacity-50">
-            <div class="text-center"><span class="block text-2xl font-bold">KVKK</span><span class="text-xs uppercase">Tam Uyum</span></div>
-            <div class="text-center"><span class="block text-2xl font-bold">ISO 27001</span><span class="text-xs uppercase">Bilgi Güvenliği</span></div>
-            <div class="text-center"><span class="block text-2xl font-bold">AES-256</span><span class="text-xs uppercase">Askeri Şifreleme</span></div>
-        </div>
-
-        <!-- İletişim Formu (Netlify ile çalışır) -->
-        <div class="glass-card p-8 rounded-2xl">
-            <h2 class="text-3xl font-bold text-center mb-2">Hemen Teklif Alın</h2>
+        <div class="glass-card p-8 rounded-2xl border border-gray-800 bg-gray-900/50 backdrop-blur-sm">
+            <h2 class="text-3xl font-bold text-center mb-2 text-white">Hemen Teklif Alın</h2>
             <p class="text-center text-gray-400 mb-8">Bilgilerinizi bırakın, uzmanlarımız size dönüş yapsın.</p>
+
+            <form name="contact" method="POST" action="/" data-netlify="true" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <input type="hidden" name="form-name" value="contact" />
+                <input type="text" name="name" placeholder="Ad Soyad" class="p-3 bg-gray-950 border border-gray-700 rounded-lg text-white w-full" required>
+                <input type="text" name="company" placeholder="Firma Adı" class="p-3 bg-gray-950 border border-gray-700 rounded-lg text-white w-full">
+                <input type="email" name="email" placeholder="E-posta" class="p-3 bg-gray-950 border border-gray-700 rounded-lg text-white col-span-1 md:col-span-2 w-full" required>
+                <button type="submit" class="col-span-1 md:col-span-2 py-4 bg-teal-500 hover:bg-teal-400 text-black font-bold rounded-lg transition-all">Gönder</button>
+            </form>
+        </div>
+    </div>
+</section>
             
 <form name="contact" method="POST" action="/" data-netlify="true">
     <!-- Bu gizli kutucuk, Netlify'ın formu tanıması için zorunludur -->
@@ -452,18 +456,8 @@ button:hover, a:hover {
         Ücretsiz Danışmanlık Alın
     </a>
 </section>
-<form name="contact" method="POST" data-netlify="true">
-  <input type="hidden" name="form-name" value="contact" />
-  <p>
-    <label>İsim: <input type="text" name="name" /></label>
-  </p>
-  <p>
-    <label>Email: <input type="email" name="email" /></label>
-  </p>
-  <p>
-    <button type="submit">Gönder</button>
-  </p>
-</form>
+
+
 
     <!-- Alt Bilgi (Footer) -->
 <footer class="border-t border-gray-800 py-12 px-6">
