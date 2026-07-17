@@ -414,7 +414,36 @@ button:hover, a:hover {
         </div>
     </div>
 </section>
-            
+      <!-- Bildirim Kutusu -->
+<div id="successNotification" class="hidden fixed top-5 right-5 bg-teal-500 text-black px-6 py-4 rounded-lg shadow-xl font-bold z-50 transition-all duration-500 transform translate-y-0">
+    Mesajınız başarıyla iletildi!
+</div> 
+
+<script>
+    const form = document.getElementById('contactForm');
+
+    form.addEventListener('submit', (e) => {
+        // Sayfanın yenilenmesini kesin olarak engelle
+        e.preventDefault(); 
+        
+        const formData = new FormData(form);
+        
+        fetch('/', {
+            method: 'POST',
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: new URLSearchParams(formData).toString()
+        })
+        .then(() => {
+            // Başarılı olduğunda
+            alert("Harika! Mesajınız bize ulaştı. Teşekkürler.");
+            form.reset();
+        })
+        .catch(error => {
+            // Bir hata olursa
+            alert("Bir sorun oluştu. Lütfen tekrar deneyin.");
+        });
+    });
+</script>
 
 </section>
     
@@ -472,35 +501,7 @@ button:hover, a:hover {
         © 2026 Archivex. Tüm hakları saklıdır.
     </div>
 </footer>
-<!-- Bildirim Kutusu -->
-<div id="successNotification" class="hidden fixed top-5 right-5 bg-teal-500 text-black px-6 py-4 rounded-lg shadow-xl font-bold z-50 transition-all duration-500 transform translate-y-0">
-    Mesajınız başarıyla iletildi!
-</div>
-<script>
-    const form = document.getElementById('contactForm');
 
-    form.addEventListener('submit', (e) => {
-        // Sayfanın yenilenmesini kesin olarak engelle
-        e.preventDefault(); 
-        
-        const formData = new FormData(form);
-        
-        fetch('/', {
-            method: 'POST',
-            headers: { "Content-Type": "application/x-www-form-urlencoded" },
-            body: new URLSearchParams(formData).toString()
-        })
-        .then(() => {
-            // Başarılı olduğunda
-            alert("Harika! Mesajınız bize ulaştı. Teşekkürler.");
-            form.reset();
-        })
-        .catch(error => {
-            // Bir hata olursa
-            alert("Bir sorun oluştu. Lütfen tekrar deneyin.");
-        });
-    });
-</script>
 </body>
 <!-- GIT_FIX_2026 -->
 </html>
