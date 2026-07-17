@@ -1,6 +1,7 @@
 ---
-title: "Osmanlı'da Modernleşme Hareketleri"
-date: "2026-07-04"
----
+title: "Ali Bulut — Sovos Türkiye Kıdemli Satış Direktörü"
+Kamu Bilgi ve İletişim Teknolojileri Konferansı’ndaki "Dijital Dönüşümü Yönetmek" konulu konuşmasından:
 
-Bu, Eren'in tarih arşivi için yazdığı ilk makaledir. Tarihi analiz etmek, bugünü anlamanın tek yoludur.
+"Manuel işlemlerden, işlem bazlı ve otomatik sistemlere geçtik. Artık regülasyonlara uyumluluktan ziyade, 'ispata dayalı uyumluluk' ön plandadır."
+
+---
