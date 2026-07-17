@@ -396,42 +396,33 @@ button:hover, a:hover {
 
 
     <!-- 05. İletişim Alanı -->
-    <!-- İletişim ve Güven Bölümü -->
-<!-- İletişim Formu (Stilli ve Çalışır Halde) -->
+ <!-- Şık ve Çalışan Form -->
 <section id="iletisim" class="py-20 px-6">
     <div class="max-w-4xl mx-auto">
         <div class="glass-card p-8 rounded-2xl border border-gray-800 bg-gray-900/50 backdrop-blur-sm">
             <h2 class="text-3xl font-bold text-center mb-2 text-white">Hemen Teklif Alın</h2>
             <p class="text-center text-gray-400 mb-8">Bilgilerinizi bırakın, uzmanlarımız size dönüş yapsın.</p>
 
-            <form name="contact" method="POST" data-netlify="true" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <!-- Fonksiyonel Form -->
+            <form id="myContactForm" name="contact" method="POST" data-netlify="true" class="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <input type="hidden" name="form-name" value="contact" />
+                
                 <input type="text" name="name" placeholder="Ad Soyad" class="p-3 bg-gray-950 border border-gray-700 rounded-lg text-white w-full" required>
                 <input type="text" name="company" placeholder="Firma Adı" class="p-3 bg-gray-950 border border-gray-700 rounded-lg text-white w-full">
                 <input type="email" name="email" placeholder="E-posta" class="p-3 bg-gray-950 border border-gray-700 rounded-lg text-white col-span-1 md:col-span-2 w-full" required>
+                
                 <button type="submit" class="col-span-1 md:col-span-2 py-4 bg-teal-500 hover:bg-teal-400 text-black font-bold rounded-lg transition-all">Gönder</button>
             </form>
         </div>
     </div>
 </section>
 
-<!-- Form Başlangıcı -->
-<form id="myContactForm" name="contact" method="POST" data-netlify="true" class="grid grid-cols-1 md:grid-cols-2 gap-4">
-    <input type="hidden" name="form-name" value="contact" />
-    <input type="text" name="name" placeholder="Ad Soyad" class="p-3 bg-gray-950 border border-gray-700 rounded-lg text-white w-full" required>
-    <input type="text" name="company" placeholder="Firma Adı" class="p-3 bg-gray-950 border border-gray-700 rounded-lg text-white w-full">
-    <input type="email" name="email" placeholder="E-posta" class="p-3 bg-gray-950 border border-gray-700 rounded-lg text-white col-span-1 md:col-span-2 w-full" required>
-    <button type="submit" class="col-span-1 md:col-span-2 py-4 bg-teal-500 hover:bg-teal-400 text-black font-bold rounded-lg transition-all">Gönder</button>
-</form>
-
-<!-- JS Kodu -->
+<!-- Fonksiyonel JS -->
 <script>
     const myForm = document.querySelector("#myContactForm");
     
     myForm.addEventListener("submit", (e) => {
         e.preventDefault();
-        
-        // Form verilerini al
         const formData = new FormData(myForm);
         
         fetch("/", {
@@ -440,12 +431,10 @@ button:hover, a:hover {
             body: new URLSearchParams(formData).toString(),
         })
         .then(() => {
-            console.log("Form Netlify'a başarıyla ulaştı!");
             alert("Harika! Mesajınız bize ulaştı. Teşekkürler.");
             myForm.reset();
         })
         .catch((error) => {
-            console.error("Hata:", error);
             alert("Bir sorun oluştu. Lütfen tekrar deneyin.");
         });
     });
@@ -455,36 +444,8 @@ button:hover, a:hover {
     Mesajınız başarıyla iletildi!
 </div> 
 
-<script>
-    const form = document.getElementById('contactForm');
-
-    form.addEventListener('submit', (e) => {
-        // Sayfanın yenilenmesini kesin olarak engelle
-        e.preventDefault(); 
-        
-        const formData = new FormData(form);
-        
-        fetch('/', {
-            method: 'POST',
-            headers: { "Content-Type": "application/x-www-form-urlencoded" },
-            body: new URLSearchParams(formData).toString()
-        })
-        .then(() => {
-            // Başarılı olduğunda
-            alert("Harika! Mesajınız bize ulaştı. Teşekkürler.");
-            form.reset();
-        })
-        .catch(error => {
-            // Bir hata olursa
-            alert("Bir sorun oluştu. Lütfen tekrar deneyin.");
-        });
-    });
-</script>
 
 </section>
-    
-    
-    
     
     <section id="iletisim" class="max-w-5xl mx-auto px-6 py-20 border-t border-white/5 text-center relative">
         <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-archivex-neon/5 rounded-full blur-[100px] pointer-events-none"></div>
