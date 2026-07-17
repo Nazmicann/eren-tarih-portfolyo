@@ -414,6 +414,42 @@ button:hover, a:hover {
         </div>
     </div>
 </section>
+
+<!-- Form Başlangıcı -->
+<form id="myContactForm" name="contact" method="POST" data-netlify="true" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+    <input type="hidden" name="form-name" value="contact" />
+    <input type="text" name="name" placeholder="Ad Soyad" class="p-3 bg-gray-950 border border-gray-700 rounded-lg text-white w-full" required>
+    <input type="text" name="company" placeholder="Firma Adı" class="p-3 bg-gray-950 border border-gray-700 rounded-lg text-white w-full">
+    <input type="email" name="email" placeholder="E-posta" class="p-3 bg-gray-950 border border-gray-700 rounded-lg text-white col-span-1 md:col-span-2 w-full" required>
+    <button type="submit" class="col-span-1 md:col-span-2 py-4 bg-teal-500 hover:bg-teal-400 text-black font-bold rounded-lg transition-all">Gönder</button>
+</form>
+
+<!-- JS Kodu -->
+<script>
+    const myForm = document.querySelector("#myContactForm");
+    
+    myForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        
+        // Form verilerini al
+        const formData = new FormData(myForm);
+        
+        fetch("/", {
+            method: "POST",
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: new URLSearchParams(formData).toString(),
+        })
+        .then(() => {
+            console.log("Form Netlify'a başarıyla ulaştı!");
+            alert("Harika! Mesajınız bize ulaştı. Teşekkürler.");
+            myForm.reset();
+        })
+        .catch((error) => {
+            console.error("Hata:", error);
+            alert("Bir sorun oluştu. Lütfen tekrar deneyin.");
+        });
+    });
+</script>
       <!-- Bildirim Kutusu -->
 <div id="successNotification" class="hidden fixed top-5 right-5 bg-teal-500 text-black px-6 py-4 rounded-lg shadow-xl font-bold z-50 transition-all duration-500 transform translate-y-0">
     Mesajınız başarıyla iletildi!
