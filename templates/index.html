@@ -74,6 +74,22 @@
         backdrop-filter: blur(10px);
         border: 1px solid rgba(255, 255, 255, 0.05);
     }
+
+    /* Kartların Üzerine Gelindiğinde Efekt */
+.glass-card {
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.glass-card:hover {
+    transform: translateY(-10px);
+    border-color: #00F5D4;
+    box-shadow: 0 20px 40px rgba(0, 245, 212, 0.1);
+}
+
+/* Butonlara hafif büyüme efekti */
+button:hover, a:hover {
+    transform: scale(1.02);
+}
 </style>
 </head>
 <body class="bg-archivex-dark text-archivex-gray font-sans antialiased overflow-x-hidden">
@@ -333,6 +349,34 @@
 
 
     <!-- 05. İletişim Alanı -->
+    <!-- İletişim ve Güven Bölümü -->
+<section id="iletisim" class="py-20 px-6">
+    <div class="max-w-4xl mx-auto">
+        <!-- Güven / Uyumluluk Şeritleri -->
+        <div class="flex flex-wrap justify-center gap-12 mb-16 opacity-50">
+            <div class="text-center"><span class="block text-2xl font-bold">KVKK</span><span class="text-xs uppercase">Tam Uyum</span></div>
+            <div class="text-center"><span class="block text-2xl font-bold">ISO 27001</span><span class="text-xs uppercase">Bilgi Güvenliği</span></div>
+            <div class="text-center"><span class="block text-2xl font-bold">AES-256</span><span class="text-xs uppercase">Askeri Şifreleme</span></div>
+        </div>
+
+        <!-- İletişim Formu (Netlify ile çalışır) -->
+        <div class="glass-card p-8 rounded-2xl">
+            <h2 class="text-3xl font-bold text-center mb-2">Hemen Teklif Alın</h2>
+            <p class="text-center text-gray-400 mb-8">Bilgilerinizi bırakın, uzmanlarımız size dönüş yapsın.</p>
+            
+            <form name="contact" method="POST" data-netlify="true" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <input type="text" name="name" placeholder="Ad Soyad" class="p-3 bg-gray-900 border border-gray-700 rounded-lg text-white" required>
+                <input type="text" name="company" placeholder="Firma Adı" class="p-3 bg-gray-900 border border-gray-700 rounded-lg text-white">
+                <input type="email" name="email" placeholder="E-posta" class="p-3 bg-gray-900 border border-gray-700 rounded-lg text-white col-span-1 md:col-span-2" required>
+                <button type="submit" class="col-span-1 md:col-span-2 py-4 bg-teal-500 hover:bg-teal-400 text-black font-bold rounded-lg transition-all">Gönder</button>
+            </form>
+        </div>
+    </div>
+</section>
+    
+    
+    
+    
     <section id="iletisim" class="max-w-5xl mx-auto px-6 py-20 border-t border-white/5 text-center relative">
         <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-archivex-neon/5 rounded-full blur-[100px] pointer-events-none"></div>
 
@@ -349,6 +393,13 @@
             </a>
         </div>
     </section>
+    <section class="py-20 text-center border-t border-gray-800">
+    <h2 class="text-3xl font-bold mb-4">Hala Kararsız Mısınız?</h2>
+    <p class="text-gray-400 mb-8">Ücretsiz dijital arşivleme danışmanlığı için bize ulaşın.</p>
+    <a href="#iletisim" class="inline-block px-8 py-3 border border-teal-500 text-teal-500 hover:bg-teal-500 hover:text-black font-bold rounded-full transition-all">
+        Ücretsiz Danışmanlık Alın
+    </a>
+</section>
 
     <!-- Alt Bilgi (Footer) -->
     <footer class="border-t border-white/5 py-10 text-center text-gray-500 text-sm bg-archivex-darker">
