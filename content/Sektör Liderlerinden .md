@@ -1,0 +1,1 @@
+> "Sektör liderlerinin de vurguladığı gibi; e-Arşivleme sadece yasal bir zorunluluğu yerine getirmek değil; işletmenizi geleceğin dijital dünyasına entegre etmek, operasyonel hız kazanmak ve maliyetleri kontrol altına almak için en stratejik adımdır."
