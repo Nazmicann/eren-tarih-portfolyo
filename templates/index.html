@@ -34,11 +34,10 @@
                             neon: '#00F5D4',       // Neon Dijital Turkuaz
                             darker: '#050a14'      // Dip zemin
                         },
-                        // SİHİRLİ GEÇİŞ: generate.py içindeki eski sınıfları yeni renklere haritalıyoruz!
                         historical: {
                             900: '#0B132B',       // Gece Mavisi
                             800: '#1C2541',       // Kart Laciverti
-                            gold: '#00F5D4',      // ARTIK GOLD DEĞİL, NEON TURKUAZ!
+                            gold: '#00F5D4',      // Neon Turkuaz
                             text: '#E0E1DD'       // Platin Gri
                         }
                     }
@@ -49,7 +48,7 @@
     <style>
         html { scroll-behavior: smooth; }
         
-        /* Markdown / CMS'den gelen yazıların tam uyumu */
+        /* Markdown / CMS'den gelen duyuru yazılarının tam uyumu */
         .prose h1, .prose h2, .prose h3 { font-family: 'Plus Jakarta Sans', sans-serif; color: #00F5D4 !important; font-weight: bold; }
         .prose p { color: #E0E1DD !important; line-height: 1.7; }
         .prose strong { color: #00F5D4 !important; }
@@ -63,7 +62,6 @@
         <div class="max-w-5xl mx-auto flex justify-between items-center">
             <!-- Logo & Marka Alanı -->
             <div class="flex items-center gap-3">
-                <!-- Akıllı Logo Yükleyici: Kırılmaları önler, yüklenene kadar gizli kalır, başarısız olursa temizce kaybolur -->
                 <img id="archivex-logo"
                      src="/static/img/logo.png" 
                      alt="Archivex Logo" 
@@ -77,7 +75,7 @@
             <div class="space-x-6 md:space-x-8 text-xs md:text-sm font-semibold uppercase tracking-wider text-gray-400">
                 <a href="#hizmetler" class="hover:text-archivex-neon transition-colors">Hizmetler</a>
                 <a href="#guvenlik" class="hover:text-archivex-neon transition-colors">Güvenlik</a>
-                <a href="#rehber" class="hover:text-archivex-neon transition-colors">E-Arşiv Konuşmaları</a>
+                <a href="#faydalar" class="hover:text-archivex-neon transition-colors">Faydaları</a>
                 <a href="#iletisim" class="hover:text-archivex-neon transition-colors">İletişim</a>
             </div>
         </div>
@@ -85,11 +83,9 @@
 
     <!-- Giriş (Hero) Alanı -->
     <header class="max-w-5xl mx-auto py-28 px-6 text-center md:text-left relative overflow-hidden">
-        <!-- Arka Plan Işık Efekti -->
         <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-archivex-neon/10 rounded-full blur-[120px] pointer-events-none"></div>
 
         <div class="relative z-10 max-w-3xl">
-            <!-- Yenilenen Orantılı Klasör İkonu Etiketi -->
             <div class="inline-flex items-center gap-2 bg-archivex-neon/10 border border-archivex-neon/20 px-4 py-2 rounded-full mb-6">
                 <svg class="w-4 h-4 text-archivex-neon" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"></path>
@@ -125,7 +121,6 @@
         <div class="grid md:grid-cols-3 gap-8">
             <!-- Kart 1 -->
             <div class="bg-archivex-card/40 p-8 rounded-2xl border border-white/5 hover:border-archivex-neon/20 transition-all duration-300">
-                <!-- Vektör İkon -->
                 <div class="w-12 h-12 rounded-xl bg-archivex-neon/10 flex items-center justify-center text-archivex-neon mb-6">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
@@ -139,7 +134,6 @@
 
             <!-- Kart 2 -->
             <div class="bg-archivex-card/40 p-8 rounded-2xl border border-white/5 hover:border-archivex-neon/20 transition-all duration-300">
-                <!-- Vektör İkon -->
                 <div class="w-12 h-12 rounded-xl bg-archivex-neon/10 flex items-center justify-center text-archivex-neon mb-6">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
@@ -153,7 +147,6 @@
 
             <!-- Kart 3 -->
             <div class="bg-archivex-card/40 p-8 rounded-2xl border border-white/5 hover:border-archivex-neon/20 transition-all duration-300">
-                <!-- Vektör İkon -->
                 <div class="w-12 h-12 rounded-xl bg-archivex-neon/10 flex items-center justify-center text-archivex-neon mb-6">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
@@ -220,27 +213,115 @@
         </div>
     </section>
 
-    <!-- 03. Yenilenen Sektörel Rehber & E-Arşiv Konuşmacıları Alanı -->
-    <section id="rehber" class="max-w-5xl mx-auto px-6 py-20">
-        <div class="text-center md:text-left mb-12">
-            <!-- Vektör Mikrofon İkonu -->
+    <!-- ==========================================
+       YENİ: 03. E-ARŞİVİN FAYDALARI VE AVANTAJLARI BÖLÜMÜ (STATIC GRID)
+       ========================================== -->
+    <section id="faydalar" class="max-w-5xl mx-auto px-6 py-20">
+        <div class="text-center md:text-left mb-16">
             <div class="inline-flex items-center gap-2 bg-archivex-neon/10 border border-archivex-neon/20 px-3 py-1.5 rounded-full mb-3">
                 <svg class="w-4 h-4 text-archivex-neon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"></path>
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
                 </svg>
-                <span class="text-archivex-neon font-heading font-bold tracking-wider text-xs uppercase">E-ARŞİVLEME KONUŞMALARI & GÖRÜŞLER</span>
+                <span class="text-archivex-neon font-heading font-bold tracking-wider text-xs uppercase">NEDEN DİJİTALLEŞMELİSİNİZ?</span>
             </div>
-            <h3 class="text-3xl font-heading font-bold text-white">Sektörel Rehber & Uzman Görüşleri</h3>
-            <p class="text-gray-400 mt-2">E-Arşivleme panellerinden, seminerlerden ve liderlerin konuşma notlarından derlediğimiz makaleler.</p>
+            <h3 class="text-3xl font-heading font-bold text-white">E-Arşivin İşletmenize Sağladığı Faydalar</h3>
+            <p class="text-gray-400 mt-2 max-w-2xl">Arşiv süreçlerinizi tamamen dijital ortama taşımak operasyonel verimliliğinizi artırırken risklerinizi sıfıra indirir.</p>
         </div>
         
-        <!-- CMS Yazıları Buraya Gelecek (Renk paletleri otomatik neon turkuaz ve gece mavisidir) -->
-        <div class="space-y-8">
+        <div class="grid md:grid-cols-2 gap-8">
+            <!-- Avantaj 1: Alan Kazanımı -->
+            <div class="flex gap-4 p-6 rounded-2xl bg-archivex-card/30 border border-white/5 hover:border-archivex-neon/10 transition-all duration-350">
+                <div class="w-10 h-10 rounded-lg bg-archivex-neon/10 text-archivex-neon flex items-center justify-center shrink-0">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
+                    </svg>
+                </div>
+                <div>
+                    <h4 class="text-lg font-heading font-bold text-white mb-2">Fiziksel Alan Kazanımı</h4>
+                    <p class="text-sm text-gray-400 leading-relaxed">Klasör yığınları ve geniş arşiv dolapları için kullandığınız değerli ofis alanlarını geri kazanın. Tüm arşivinizi tek bir dijital ortamda toplayın.</p>
+                </div>
+            </div>
+
+            <!-- Avantaj 2: Zaman Tasarrufu -->
+            <div class="flex gap-4 p-6 rounded-2xl bg-archivex-card/30 border border-white/5 hover:border-archivex-neon/10 transition-all duration-350">
+                <div class="w-10 h-10 rounded-lg bg-archivex-neon/10 text-archivex-neon flex items-center justify-center shrink-0">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    </svg>
+                </div>
+                <div>
+                    <h4 class="text-lg font-heading font-bold text-white mb-2">Maksimum Zaman Tasarrufu</h4>
+                    <p class="text-sm text-gray-400 leading-relaxed">Tozlu arşivlerde saatlerce dosya arama devri bitti. Bilgisayarınızdan tek tuşla, aradığınız kelimeye göre arama yapın ve saniyeler içinde belgenize ulaşın.</p>
+                </div>
+            </div>
+
+            <!-- Avantaj 3: Maliyet Azaltma -->
+            <div class="flex gap-4 p-6 rounded-2xl bg-archivex-card/30 border border-white/5 hover:border-archivex-neon/10 transition-all duration-350">
+                <div class="w-10 h-10 rounded-lg bg-archivex-neon/10 text-archivex-neon flex items-center justify-center shrink-0">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    </svg>
+                </div>
+                <div>
+                    <h4 class="text-lg font-heading font-bold text-white mb-2">Operasyonel Maliyetlerin Düşürülmesi</h4>
+                    <p class="text-sm text-gray-400 leading-relaxed">Kağıt, toner, dosyalama ekipmanları, kargo ve arşiv depolama maliyetlerini sıfıra indirerek bütçenizi koruyun ve doğrudan tasarruf sağlayın.</p>
+                </div>
+            </div>
+
+            <!-- Avantaj 4: Fiziksel Güvenlik -->
+            <div class="flex gap-4 p-6 rounded-2xl bg-archivex-card/30 border border-white/5 hover:border-archivex-neon/10 transition-all duration-350">
+                <div class="w-10 h-10 rounded-lg bg-archivex-neon/10 text-archivex-neon flex items-center justify-center shrink-0">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
+                    </svg>
+                </div>
+                <div>
+                    <h4 class="text-lg font-heading font-bold text-white mb-2">Doğal Afet ve Yıpranma Koruması</h4>
+                    <p class="text-sm text-gray-400 leading-relaxed">Evrakların zamanla sararması, rutubetlenmesi, mürekkep solması veya yangın/su baskını gibi afetlerle tamamen yok olması riskini güvenli yedekleme ile engelleyin.</p>
+                </div>
+            </div>
+
+            <!-- Avantaj 5: Kolay Erişim & Mobilite -->
+            <div class="flex gap-4 p-6 rounded-2xl bg-archivex-card/30 border border-white/5 hover:border-archivex-neon/10 transition-all duration-350">
+                <div class="w-10 h-10 rounded-lg bg-archivex-neon/10 text-archivex-neon flex items-center justify-center shrink-0">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
+                    </svg>
+                </div>
+                <div>
+                    <h4 class="text-lg font-heading font-bold text-white mb-2">Her Yerden ve Güvenli Erişim</h4>
+                    <p class="text-sm text-gray-400 leading-relaxed">İnternet bağlantınızın olduğu her yerden arşivinize erişin, ekibinize özel erişim yetkileri tanımlayarak şirket dışındayken bile iş akışını kesintisiz sürdürün.</p>
+                </div>
+            </div>
+
+            <!-- Avantaj 6: Çevre Dostu -->
+            <div class="flex gap-4 p-6 rounded-2xl bg-archivex-card/30 border border-white/5 hover:border-archivex-neon/10 transition-all duration-350">
+                <div class="w-10 h-10 rounded-lg bg-archivex-neon/10 text-archivex-neon flex items-center justify-center shrink-0">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 002 2h1.5m1-7.335V11.5a3.375 3.375 0 00-.41 6.321M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 12 12z"></path>
+                    </svg>
+                </div>
+                <div>
+                    <h4 class="text-lg font-heading font-bold text-white mb-2">Çevre Dostu & Yeşil Arşiv</h4>
+                    <p class="text-sm text-gray-400 leading-relaxed">Kağıt tüketimini sıfırlayarak karbon ayak izinizi azaltın. Gelecek nesillere daha yeşil bir dünya bırakmak için ofisinizi çevre dostu bir yapıya ulaştırın.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+       PASİF/GİZLİ: 04. SEKTÖREL BÜLTEN & DUYURULAR (PYTHON MOTORU İÇİN GEREKLİ)
+       ========================================== -->
+    <section class="max-w-5xl mx-auto px-6 py-12 border-t border-white/5">
+        <div class="text-left mb-6">
+            <h4 class="text-xs font-heading font-bold text-archivex-neon/70 tracking-widest uppercase">📰 GÜNCEL GELİŞMELER & DUYURULAR</h4>
+        </div>
+        <div class="space-y-4">
             {{articles}}
         </div>
     </section>
 
-    <!-- 04. İletişim Alanı -->
+    <!-- 05. İletişim Alanı -->
     <section id="iletisim" class="max-w-5xl mx-auto px-6 py-20 border-t border-white/5 text-center relative">
         <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-archivex-neon/5 rounded-full blur-[100px] pointer-events-none"></div>
 
