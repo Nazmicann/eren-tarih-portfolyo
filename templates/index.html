@@ -46,13 +46,30 @@
         }
     </script>
     <style>
+      
         html { scroll-behavior: smooth; }
         
-        /* Markdown / CMS'den gelen duyuru yazılarının tam uyumu */
-        .prose h1, .prose h2, .prose h3 { font-family: 'Plus Jakarta Sans', sans-serif; color: #00F5D4 !important; font-weight: bold; }
-        .prose p { color: #E0E1DD !important; line-height: 1.7; }
+        /* PYTHON'UN ÜRETTİĞİ ESKİ RENKLERİ YOK ET */
+        /* Başlıklar ve Vurgular */
+        .text-amber-500, .text-historical-gold, .text-white { 
+            color: #00F5D4 !important; 
+        }
+        /* Kartların Arka Planı */
+        .bg-historical-800\/30, .bg-historical-800\/40, .bg-archivex-card\/40 { 
+            background-color: #1C2541 !important; 
+        }
+        /* Çerçeveler */
+        .border-gray-800, .border-historical-gold\/30, [class*="border-historical-"] { 
+            border-color: rgba(0, 245, 212, 0.3) !important; 
+        }
+        /* İçerik Yazıları */
+        .text-gray-400, .text-gray-500 { 
+            color: #E0E1DD !important; 
+        }
+        /* Markdown'dan gelen metinler */
+        .prose p { color: #E0E1DD !important; }
         .prose strong { color: #00F5D4 !important; }
-        .prose a { color: #00F5D4 !important; text-decoration: underline; }
+   
     </style>
 </head>
 <body class="bg-archivex-dark text-archivex-gray font-sans antialiased">

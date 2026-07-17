@@ -41,7 +41,7 @@ if os.path.exists(content_dir):
                 raw_content = f.read()
             
             title = filename.replace('.md', '').replace('-', ' ').upper()
-            date = "2026-07-04"
+            date = "2026-07-17"  # Varsayılan tarih
             body_markdown = raw_content
             
             normalized_content = raw_content.replace('\r\n', '\n').strip()
