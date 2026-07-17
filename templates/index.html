@@ -69,6 +69,28 @@
         /* Markdown'dan gelen metinler */
         .prose p { color: #E0E1DD !important; }
         .prose strong { color: #00F5D4 !important; }
+
+        /* Dijital Arşiv Izgarası (Data Grid) */
+body {
+    background-image: 
+        linear-gradient(rgba(0, 245, 212, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 245, 212, 0.03) 1px, transparent 1px);
+    background-size: 50px 50px;
+    background-position: center;
+}
+
+/* Hero Bölümü için Dijital Akış Efekti */
+.hero-digital-nodes {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(circle at 2px 2px, rgba(0, 245, 212, 0.15) 1px, transparent 0);
+    background-size: 100px 100px;
+    pointer-events: none;
+    z-index: 0;
+}
    
     </style>
 </head>
@@ -101,6 +123,11 @@
     <!-- Giriş (Hero) Alanı -->
     <header class="max-w-5xl mx-auto py-28 px-6 text-center md:text-left relative overflow-hidden">
         <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-archivex-neon/10 rounded-full blur-[120px] pointer-events-none"></div>
+
+        <!-- YENİ: Dijital Node Efekti -->
+    <div class="hero-digital-nodes"></div>
+    
+    <div class="max-w-5xl mx-auto relative z-10">
 
         <div class="relative z-10 max-w-3xl">
             <div class="inline-flex items-center gap-2 bg-archivex-neon/10 border border-archivex-neon/20 px-4 py-2 rounded-full mb-6">
