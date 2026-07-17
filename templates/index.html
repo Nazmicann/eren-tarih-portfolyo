@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eren Erdoğan | Tarih Portfolyosu</title>
+    <title>Archivex | Dijital Arşiv Çözümleri</title>
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
     <script>
             if (window.netlifyIdentity) {
                 window.netlifyIdentity.on("init", user => {
@@ -23,15 +23,16 @@
             theme: {
                 extend: {
                     fontFamily: {
-                        sans: ['Lora', 'serif'],
-                        heading: ['Cinzel', 'serif'],
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Plus Jakarta Sans', 'sans-serif'],
                     },
                     colors: {
-                        historical: {
-                            900: '#13141c',
-                            800: '#1e202e',
-                            gold: '#c5a059',
-                            text: '#e2e8f0'
+                        archivex: {
+                            dark: '#0B132B',       // Teknoloji Gece Mavisi
+                            card: '#1C2541',       // Kartlar için bir ton açık lacivert
+                            gray: '#E0E1DD',       // Platin Gri
+                            neon: '#00F5D4',       // Neon Dijital Turkuaz
+                            darker: '#050a14'      // Dip zemin
                         }
                     }
                 }
@@ -40,146 +41,183 @@
     </script>
     <style>
         html { scroll-behavior: smooth; }
-        .prose h1 { font-family: 'Cinzel', serif; font-size: 1.8rem; color: #c5a059; margin-bottom: 0.5rem; font-weight: bold; }
-        .prose p { margin-bottom: 1rem; line-height: 1.7; color: #cbd5e1; }
-        .prose strong { color: #c5a059; }
+        /* CMS'den gelen yazıların stil uyumu */
+        .prose h1 { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.8rem; color: #00F5D4; margin-bottom: 0.5rem; font-weight: bold; }
+        .prose p { margin-bottom: 1rem; line-height: 1.7; color: #E0E1DD; }
+        .prose strong { color: #00F5D4; }
     </style>
 </head>
-<body class="bg-historical-900 text-historical-text font-sans antialiased">
+<body class="bg-archivex-dark text-archivex-gray font-sans antialiased">
 
     <!-- Navigasyon Menüsü -->
-    <nav class="border-b border-gray-800/60 p-6 sticky top-0 bg-historical-900/90 backdrop-blur-md z-50">
+    <nav class="border-b border-white/5 p-5 sticky top-0 bg-archivex-dark/90 backdrop-blur-md z-50">
         <div class="max-w-5xl mx-auto flex justify-between items-center">
-            <div class="text-xl font-heading font-bold text-historical-gold tracking-widest">EREN ERDOĞAN</div>
-            <div class="space-x-6 md:space-x-8 text-xs md:text-sm uppercase tracking-widest text-gray-400">
-                <a href="#hakkimda" class="hover:text-historical-gold transition-colors">Hakkımda</a>
-                <a href="#kitaplik" class="hover:text-historical-gold transition-colors">Kitaplık</a>
-                <a href="#calismalar" class="hover:text-historical-gold transition-colors">Çalışmalar</a>
-                <a href="#iletisim" class="hover:text-historical-gold transition-colors">İletişim</a>
+            <!-- Logo Alanı -->
+            <div class="flex items-center gap-3">
+                <!-- Eğer logonuzu static/images/logo.png olarak yüklerseniz burası çalışır, şimdilik şık bir text logo da koydum -->
+                <div class="text-2xl font-heading font-extrabold tracking-tight text-white">
+                    <img src="static/img/logo.png" alt="Archivex Logo" class="h-10 w-auto">
+                    ARCHIVE<span class="text-archivex-neon">X</span>
+                </div>
+            </div>
+            <div class="space-x-6 md:space-x-8 text-xs md:text-sm font-semibold uppercase tracking-wider text-gray-400">
+                <a href="#hizmetler" class="hover:text-archivex-neon transition-colors">Hizmetler</a>
+                <a href="#guvenlik" class="hover:text-archivex-neon transition-colors">Güvenlik</a>
+                <a href="#rehber" class="hover:text-archivex-neon transition-colors">Sektörel Rehber</a>
+                <a href="#iletisim" class="hover:text-archivex-neon transition-colors">İletişim</a>
             </div>
         </div>
     </nav>
 
     <!-- Giriş (Hero) Alanı -->
-    <header class="max-w-5xl mx-auto py-24 px-6 text-center md:text-left">
-        <p class="text-historical-gold font-heading tracking-widest text-sm mb-3">GELECEĞİN TARİH EĞİTMENİ</p>
-        <h1 class="text-5xl md:text-6xl font-heading text-white mb-6 leading-tight">Geçmişin İzinde,<br>Geleceğe Işık Tutmak.</h1>
-        <p class="text-xl text-gray-400 max-w-2xl leading-relaxed">
-            Tarih Araştırmacısı ve Eğitimci Adayı. Bu dijital platform, akademik serüvenimin, arşiv taramalarımın ve tarih felsefesi üzerine düşüncelerimin bir dökümüdür.
-        </p>
+    <header class="max-w-5xl mx-auto py-28 px-6 text-center md:text-left relative overflow-hidden">
+        <!-- Arka Plan Işık Efekti -->
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-archivex-neon/10 rounded-full blur-[120px] pointer-events-none"></div>
+
+        <div class="relative z-10 max-w-3xl">
+            <p class="text-archivex-neon font-heading font-bold tracking-widest text-xs uppercase mb-4">📂 DİJİTAL ARŞİV ÇÖZÜMLERİ</p>
+            <h1 class="text-4xl md:text-6xl font-heading font-extrabold text-white mb-6 leading-tight tracking-tight">
+                Kağıt Evraklarınızı <br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-archivex-neon to-white">Aranabilir Akıllı PDF'lere</span> Dönüştürüyoruz.
+            </h1>
+            <p class="text-lg text-gray-400 leading-relaxed mb-8">
+                Fiziksel belgelerinizi, arşiv karmaşasından kurtarıp saniyeler içinde aratıp bulabileceğiniz yüksek çözünürlüklü, akıllı ve güvenli dijital dosyalara dönüştürüyoruz.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                <a href="#iletisim" class="bg-archivex-neon text-archivex-dark font-heading font-bold px-8 py-4 rounded-xl hover:shadow-[0_0_20px_rgba(0,245,212,0.4)] transition-all transform hover:-translate-y-0.5 text-center">
+                    Hemen Teklif Alın
+                </a>
+                <a href="#hizmetler" class="border border-white/10 hover:border-archivex-neon/50 text-white font-heading font-semibold px-8 py-4 rounded-xl transition-all text-center">
+                    Çözümlerimizi İnceleyin
+                </a>
+            </div>
+        </div>
     </header>
 
-    <!-- 01. Hakkımda & Öğrenci Notu Bölümü -->
-    <section id="hakkimda" class="max-w-5xl mx-auto px-6 py-16 border-t border-gray-800/40">
-        <h2 class="text-2xl font-heading text-historical-gold mb-8 tracking-wider">01. BİYOGRAFİ & VİZYON</h2>
+    <!-- 01. Neden Archivex? (Değer Önerileri) -->
+    <section id="hizmetler" class="max-w-5xl mx-auto px-6 py-20 border-t border-white/5">
+        <div class="text-center md:text-left mb-12">
+            <h2 class="text-sm font-heading font-bold text-archivex-neon tracking-widest uppercase mb-2">⚡ AVANTAJLARIMIZ</h2>
+            <h3 class="text-3xl font-heading font-bold text-white">Neden Archivex Dijital Arşivleme?</h3>
+        </div>
+        
         <div class="grid md:grid-cols-3 gap-8">
-            <div class="md:col-span-2 space-y-6 text-gray-300 leading-relaxed text-lg">
-                <p>
-                    Merhaba, ben Eren Erdoğan. Üniversitede aktif olarak sürdürdüğüm Tarih eğitimi boyunca, geçmiş olayların sadece rakamlar ve tarihlerden ibaret olmadığını, bugünün toplumlarını şekillendiren canlı birer hafıza olduğunu öğrendim. 
+            <!-- Kart 1 -->
+            <div class="bg-archivex-card/40 p-8 rounded-2xl border border-white/5 hover:border-archivex-neon/20 transition-all duration-300">
+                <div class="text-3xl mb-4">🔍</div>
+                <h4 class="text-xl font-heading font-bold text-white mb-3">Aranabilir Akıllı PDF (OCR)</h4>
+                <p class="text-sm text-gray-400 leading-relaxed">
+                    Taranan evraklar sadece resim olarak kalmaz. Optik Karakter Tanımlama (OCR) teknolojisi sayesinde, binlerce sayfalık arşivde tek bir kelimeyi aratarak saniyeler içinde ilgili evraka ulaşırsınız.
                 </p>
-                <p>
-                    Geleceğin bir tarih öğretmeni olarak amacım, ezberci eğitim kalıplarını kırarak öğrencilere tarihsel düşünme becerisi kazandırmak ve onlara birer araştırmacı gözüyle bakmayı aşılamaktır.
+            </div>
+
+            <!-- Kart 2 -->
+            <div class="bg-archivex-card/40 p-8 rounded-2xl border border-white/5 hover:border-archivex-neon/20 transition-all duration-300">
+                <div class="text-3xl mb-4">🔒</div>
+                <h4 class="text-xl font-heading font-bold text-white mb-3">Yüksek Güvenlikli Teslimat</h4>
+                <p class="text-sm text-gray-400 leading-relaxed">
+                    Dijitalleştirilen belgeleriniz, askeri düzeyde şifrelenmiş (AES-256) ve şifre korumalı dijital paketler halinde doğrudan yetkili kişiye güvenli kanallar üzerinden teslim edilir.
                 </p>
             </div>
-            <!-- Öğrenci Notu Kartı -->
-            <div class="bg-historical-800/40 p-6 rounded-xl border border-historical-gold/20 shadow-xl flex flex-col justify-between">
-                <div>
-                    <h3 class="text-sm font-heading text-historical-gold tracking-widest mb-3">📍 AKADEMİK NOT</h3>
-                    <p class="text-sm text-gray-400 italic leading-relaxed">
-                        "Bu alandaki çalışmalarım, lisans eğitimim boyunca tuttuğum ders notlarından, katıldığım sempozyumlardan ve bağımsız arşiv incelemelerimden derlenmiştir. Her yazı, bir öğretmen adayının akademik gelişim basamağıdır."
-                    </p>
-                </div>
-                <div class="mt-4 pt-4 border-t border-gray-800 text-xs text-gray-500">
-                    Güncelleme: Temmuz 2026
+
+            <!-- Kart 3 -->
+            <div class="bg-archivex-card/40 p-8 rounded-2xl border border-white/5 hover:border-archivex-neon/20 transition-all duration-300">
+                <div class="text-3xl mb-4">💼</div>
+                <h4 class="text-xl font-heading font-bold text-white mb-3">%100 KVKK Uyumluluğu</h4>
+                <p class="text-sm text-gray-400 leading-relaxed">
+                    Kişisel verileri barındıran hassas evraklarınız, Kişisel Verilerin Korunması Kanunu standartlarına tam uyumlu prosedürlerle taranır ve saklanır. Sızıntı riskleri sıfıra indirilir.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 02. KVKK ve Güvenlik Vurgusu -->
+    <section id="guvenlik" class="bg-archivex-darker py-20 border-t border-b border-white/5">
+        <div class="max-w-5xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+            <div>
+                <span class="text-xs font-heading font-bold text-archivex-neon tracking-widest uppercase mb-3 block">🛡️ GÜVENLİK PROTOKOLÜ</span>
+                <h3 class="text-3xl font-heading font-bold text-white mb-6">Verileriniz Bizimle En Güvenli Noktada</h3>
+                <p class="text-gray-400 leading-relaxed mb-6">
+                    Fiziksel kağıtların kaybolma, yangın, su baskını veya yıpranma gibi risklerini ortadan kaldırıyoruz. Archivex ile tüm arşiviniz bulutta veya lokal sunucularınızda yedekli, şifreli ve korunaklı hale gelir.
+                </p>
+                <ul class="space-y-3 text-sm text-gray-300">
+                    <li class="flex items-center gap-2">
+                        <span class="text-archivex-neon">✔</span> KVKK standartlarına uygun veri imha ve dijitalleştirme süreçleri
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <span class="text-archivex-neon">✔</span> Şifreli ZIP teslimatları ve özel bulut transfer alt yapısı
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <span class="text-archivex-neon">✔</span> Gizlilik sözleşmesi (NDA) ile garanti altına alınan veri güvenliği
+                    </li>
+                </ul>
+            </div>
+            <!-- Görsel Alanı veya Şık Grafik Kutusu -->
+            <div class="bg-archivex-card/50 p-8 rounded-2xl border border-white/5 shadow-2xl relative overflow-hidden">
+                <div class="absolute -right-10 -bottom-10 w-40 h-40 bg-archivex-neon/5 rounded-full blur-2xl"></div>
+                <h4 class="text-lg font-heading font-bold text-white mb-4">🔒 SÜREÇ NASIL İŞLİYOR?</h4>
+                <div class="space-y-6 relative z-10">
+                    <div class="flex gap-4">
+                        <div class="w-8 h-8 rounded-lg bg-archivex-neon/10 text-archivex-neon flex items-center justify-center font-bold">1</div>
+                        <div>
+                            <h5 class="text-sm font-bold text-white">Güvenli Teslim Alma</h5>
+                            <p class="text-xs text-gray-400">Belgeleriniz adresinizden tutanakla güvenli şekilde teslim alınır.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <div class="w-8 h-8 rounded-lg bg-archivex-neon/10 text-archivex-neon flex items-center justify-center font-bold">2</div>
+                        <div>
+                            <h5 class="text-sm font-bold text-white">Endüstriyel Tarama ve OCR</h5>
+                            <p class="text-xs text-gray-400">Yüksek hızlı tarayıcılarla taranıp kelime aranabilir akıllı PDF'e dönüştürülür.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <div class="w-8 h-8 rounded-lg bg-archivex-neon/10 text-archivex-neon flex items-center justify-center font-bold">3</div>
+                        <div>
+                            <h5 class="text-sm font-bold text-white">Şifreli ve Güvenli Teslim</h5>
+                            <p class="text-xs text-gray-400">Tüm dijital dosyalarınız şifrelenmiş ve onaylanmış olarak size ulaştırılır.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 02. İlgi ve Uzmanlık Alanları -->
-    <section class="max-w-5xl mx-auto px-6 py-12 border-t border-gray-800/40">
-        <h2 class="text-2xl font-heading text-historical-gold mb-6 tracking-wider">02. UZMANLIK ALANLARI</h2>
-        <p class="text-gray-400 mb-6 text-base max-w-2xl">Akademik olarak odaklandığım, kaynak taramaları yaptığım ve ders içerikleri ürettiğim başlıca tarih dönemleri:</p>
-        <div class="flex flex-wrap gap-3">
-            <span class="bg-historical-800/60 border border-historical-gold/30 text-historical-gold font-heading text-sm px-5 py-2.5 rounded-lg tracking-widest hover:bg-historical-gold hover:text-historical-900 transition-all duration-300 cursor-default">
-                OSMANLI TARİHİ
-            </span>
-            <span class="bg-historical-800/60 border border-historical-gold/30 text-historical-gold font-heading text-sm px-5 py-2.5 rounded-lg tracking-widest hover:bg-historical-gold hover:text-historical-900 transition-all duration-300 cursor-default">
-                ANTİK ÇAĞ TARİHİ
-            </span>
-            <span class="bg-historical-800/60 border border-historical-gold/30 text-historical-gold font-heading text-sm px-5 py-2.5 rounded-lg tracking-widest hover:bg-historical-gold hover:text-historical-900 transition-all duration-300 cursor-default">
-                CUMHURİYET TARİHİ
-            </span>
-            <span class="bg-historical-800/60 border border-historical-gold/30 text-historical-gold font-heading text-sm px-5 py-2.5 rounded-lg tracking-widest hover:bg-historical-gold hover:text-historical-900 transition-all duration-300 cursor-default">
-                AVRUPA TARİHİ
-            </span>
+    <!-- 03. Blog / Sektörel Rehber Alanı (Dynamic Content) -->
+    <section id="rehber" class="max-w-5xl mx-auto px-6 py-20">
+        <div class="text-center md:text-left mb-12">
+            <h2 class="text-sm font-heading font-bold text-archivex-neon tracking-widest uppercase mb-2">📚 BİLGİ MERKEZİ</h2>
+            <h3 class="text-3xl font-heading font-bold text-white">Dijitalleşme Rehberi & Sektörel Yazılar</h3>
+            <p class="text-gray-400 mt-2">Admin panelinden eklediğiniz son makaleler ve arşivleme trendleri.</p>
         </div>
-    </section>
-
-    <!-- 03. Dijital Kitaplık / Okuma Listesi -->
-    <section id="kitaplik" class="max-w-5xl mx-auto px-6 py-16 border-t border-gray-800/40">
-        <h2 class="text-2xl font-heading text-historical-gold mb-2 tracking-wider">03. DİJİTAL KİTAPLIK</h2>
-        <p class="text-gray-400 mb-8 text-base max-w-2xl">Şu an incelediğim araştırmalar ve gelecekteki öğrencilerime mutlaka önereceğim başucu eserleri:</p>
         
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-            <!-- Kitap 1 -->
-            <div class="bg-historical-800/30 border border-gray-800 p-6 rounded-xl hover:border-historical-gold/30 transition-all duration-300 flex flex-col justify-between">
-                <div>
-                    <span class="text-[10px] bg-amber-600/20 text-amber-500 font-heading tracking-widest px-2 py-1 rounded mb-4 inline-block">ÖĞRENCİLERE ÖNERİ</span>
-                    <h3 class="text-lg font-heading text-white mb-1">Gazi Mustafa Kemal Atatürk</h3>
-                    <p class="text-sm text-gray-400 italic">İlber Ortaylı</p>
-                </div>
-                <p class="text-xs text-gray-500 mt-4 border-t border-gray-800/60 pt-3">Cumhuriyet dönemini anlamak için temel bir rehber.</p>
-            </div>
-
-            <!-- Kitap 2 -->
-            <div class="bg-historical-800/30 border border-gray-800 p-6 rounded-xl hover:border-historical-gold/30 transition-all duration-300 flex flex-col justify-between">
-                <div>
-                    <span class="text-[10px] bg-historical-gold/20 text-historical-gold font-heading tracking-widest px-2 py-1 rounded mb-4 inline-block">ŞU AN İNCELEMEDE</span>
-                    <h3 class="text-lg font-heading text-white mb-1">Devlet-i 'Aliyye</h3>
-                    <p class="text-sm text-gray-400 italic">Halil İnalcık</p>
-                </div>
-                <p class="text-xs text-gray-500 mt-4 border-t border-gray-800/60 pt-3">Osmanlı devlet yapısı üzerine derinlemesine bir arşiv taraması.</p>
-            </div>
-
-            <!-- Kitap 3 -->
-            <div class="bg-historical-800/30 border border-gray-800 p-6 rounded-xl hover:border-historical-gold/30 transition-all duration-300 flex flex-col justify-between">
-                <div>
-                    <span class="text-[10px] bg-blue-600/20 text-blue-400 font-heading tracking-widest px-2 py-1 rounded mb-4 inline-block">BAŞUCU ESERİ</span>
-                    <h3 class="text-lg font-heading text-white mb-1">Feodal Toplum</h3>
-                    <p class="text-sm text-gray-400 italic">Marc Bloch</p>
-                </div>
-                <p class="text-xs text-gray-500 mt-4 border-t border-gray-800/60 pt-3">Avrupa tarihinin sosyolojik yapısını kavramak için muazzam bir kaynak.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- 04. İçerik / Makale Alanı -->
-    <section id="calismalar" class="max-w-5xl mx-auto px-6 py-16 border-t border-gray-800/40">
-        <h2 class="text-2xl font-heading text-historical-gold mb-8 tracking-wider">04. AKADEMİK ARŞİV</h2>
-        
+        <!-- CMS'DEN DİNAMİK OLARAK ÇEKİLEN YAZILAR BURAYA ENJEKTE EDİLECEK -->
         <div class="space-y-8">
             {{articles}}
         </div>
     </section>
 
-    <!-- 05. İletişim Alanı -->
-    <section id="iletisim" class="max-w-5xl mx-auto px-6 py-16 border-t border-gray-800/40 text-center">
-        <h2 class="text-2xl font-heading text-historical-gold mb-4 tracking-wider">05. İLETİŞİM</h2>
-        <p class="text-gray-400 max-w-md mx-auto mb-8">
-            Projeler, akademik iş birlikleri veya tarih üzerine sohbet etmek için bana sosyal medya hesabımdan ulaşabilirsiniz.
-        </p>
-        <a href="https://www.instagram.com/erenerdgnnnn?igsh=MW5uZzV0bmZuaG41MQ==" target="_blank" class="inline-flex items-center gap-3 bg-gradient-to-r from-amber-600 to-historical-gold text-white font-heading font-bold px-8 py-4 rounded-full shadow-lg hover:opacity-90 transition-all transform hover:-translate-y-1">
-            <span>INSTAGRAM'DAN ULAŞIN</span>
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
-              <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.444-.048-3.298c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/>
-            </svg>
-        </a>
+    <!-- 04. İletişim Alanı -->
+    <section id="iletisim" class="max-w-5xl mx-auto px-6 py-20 border-t border-white/5 text-center relative">
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-archivex-neon/5 rounded-full blur-[100px] pointer-events-none"></div>
+
+        <div class="relative z-10 max-w-xl mx-auto">
+            <h2 class="text-2xl font-heading font-bold text-white mb-4 tracking-tight">Arşivinizi Bugün Dijitalleştirin</h2>
+            <p class="text-gray-400 mb-8">
+                Firmanızın ihtiyaçlarına özel fiyat teklifi almak, süreçlerimiz hakkında detaylı bilgi edinmek veya sorularınız için bizimle iletişime geçin.
+            </p>
+            <a href="https://www.instagram.com/archivex_dijital_arsiv?igsh=dXRrdWpmeTBmbGtj" target="_blank" class="inline-flex items-center gap-3 bg-gradient-to-r from-archivex-neon to-[#00d1b2] text-archivex-dark font-heading font-bold px-8 py-4 rounded-xl shadow-[0_4px_20px_rgba(0,245,212,0.25)] hover:shadow-[0_4px_30px_rgba(0,245,212,0.45)] transition-all transform hover:-translate-y-1">
+                <span>INSTAGRAM'DAN BİZE ULAŞIN</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
+                  <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.444-.048-3.298c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/>
+                </svg>
+            </a>
+        </div>
     </section>
 
     <!-- Alt Bilgi (Footer) -->
-    <footer class="border-t border-gray-800/40 py-10 text-center text-gray-500 text-sm">
-        <p>&copy; 2026 Eren Erdoğan. Tüm hakları saklıdır.</p>
+    <footer class="border-t border-white/5 py-10 text-center text-gray-500 text-sm bg-archivex-darker">
+        <p>&copy; 2026 Archivex. Tüm hakları saklıdır. Güvenli Dijital Arşivleme Çözümleri.</p>
     </footer>
 
 </body>
