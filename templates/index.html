@@ -478,10 +478,11 @@ button:hover, a:hover {
 </div>
 <script>
     const form = document.getElementById('contactForm');
-    const notification = document.getElementById('successNotification');
 
     form.addEventListener('submit', (e) => {
-        e.preventDefault();
+        // Sayfanın yenilenmesini kesin olarak engelle
+        e.preventDefault(); 
+        
         const formData = new FormData(form);
         
         fetch('/', {
@@ -490,16 +491,14 @@ button:hover, a:hover {
             body: new URLSearchParams(formData).toString()
         })
         .then(() => {
-            // Bildirimi göster
-            notification.classList.remove('hidden');
-            form.reset(); // Formu temizle
-            
-            // 3 saniye sonra bildirimi gizle
-            setTimeout(() => {
-                notification.classList.add('hidden');
-            }, 3000);
+            // Başarılı olduğunda
+            alert("Harika! Mesajınız bize ulaştı. Teşekkürler.");
+            form.reset();
         })
-        .catch(error => alert('Bir hata oluştu, lütfen tekrar deneyin.'));
+        .catch(error => {
+            // Bir hata olursa
+            alert("Bir sorun oluştu. Lütfen tekrar deneyin.");
+        });
     });
 </script>
 </body>
