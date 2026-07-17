@@ -41,10 +41,31 @@
     </script>
     <style>
         html { scroll-behavior: smooth; }
-        /* CMS'den gelen yazıların stil uyumu */
-        .prose h1 { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.8rem; color: #00F5D4; margin-bottom: 0.5rem; font-weight: bold; }
-        .prose p { margin-bottom: 1rem; line-height: 1.7; color: #E0E1DD; }
-        .prose strong { color: #00F5D4; }
+        
+        /* ==========================================
+           YENİ: DİNAMİK YAZILAR İÇİN RENK UYARLAMA SİHRİ
+           ========================================== */
+        /* Eski sistemden (generate.py) gelen sarı/gold renkleri neon turkuaza zorlar */
+        .text-historical-gold, .text-amber-500, [class*="text-amber-"], [class*="text-historical-"] {
+            color: #00F5D4 !important;
+        }
+        .border-historical-gold, .border-historical-gold\/30, .border-gray-800, [class*="border-historical-"] {
+            border-color: rgba(0, 245, 212, 0.2) !important;
+        }
+        .bg-historical-800\/30, .bg-historical-800\/40, .bg-historical-900, .bg-historical-card {
+            background-color: rgba(28, 37, 65, 0.4) !important;
+            border-radius: 1rem !important;
+        }
+        /* "Öğrencilere Öneri" gibi etiketleri neon turkuaz yapar */
+        .bg-amber-600\/20, .bg-historical-gold\/20 {
+            background-color: rgba(0, 245, 212, 0.1) !important;
+            color: #00F5D4 !important;
+        }
+        /* Markdown'dan gelen yazı içi başlık ve kalın yazı stilleri */
+        .prose h1, .prose h2, .prose h3 { font-family: 'Plus Jakarta Sans', sans-serif; color: #00F5D4 !important; font-weight: bold; }
+        .prose p { color: #E0E1DD !important; line-height: 1.7; }
+        .prose strong { color: #00F5D4 !important; }
+        .prose a { color: #00F5D4 !important; text-decoration: underline; }
     </style>
 </head>
 <body class="bg-archivex-dark text-archivex-gray font-sans antialiased">
@@ -52,11 +73,11 @@
     <!-- Navigasyon Menüsü -->
     <nav class="border-b border-white/5 p-5 sticky top-0 bg-archivex-dark/90 backdrop-blur-md z-50">
         <div class="max-w-5xl mx-auto flex justify-between items-center">
-            <!-- Logo Alanı -->
+            <!-- Logo & Marka Alanı -->
             <div class="flex items-center gap-3">
-                <!-- Eğer logonuzu static/images/logo.png olarak yüklerseniz burası çalışır, şimdilik şık bir text logo da koydum -->
+                <!-- Akıllı Logo Yükleyici: Yol hatası durumunda otomatik olarak alternatif yolu dener -->
+                <img src="/img/logo.png" alt="Archivex Logo" class="h-10 w-auto object-contain" onerror="this.src='/static/img/logo.png'; this.onerror=null;">
                 <div class="text-2xl font-heading font-extrabold tracking-tight text-white">
-                    <img src="static/img/logo.png" alt="Archivex Logo" class="h-10 w-auto">
                     ARCHIVE<span class="text-archivex-neon">X</span>
                 </div>
             </div>
@@ -75,7 +96,14 @@
         <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-archivex-neon/10 rounded-full blur-[120px] pointer-events-none"></div>
 
         <div class="relative z-10 max-w-3xl">
-            <p class="text-archivex-neon font-heading font-bold tracking-widest text-xs uppercase mb-4">📂 DİJİTAL ARŞİV ÇÖZÜMLERİ</p>
+            <!-- Yenilenen Orantılı Klasör İkonu Etiketi -->
+            <div class="inline-flex items-center gap-2 bg-archivex-neon/10 border border-archivex-neon/20 px-4 py-2 rounded-full mb-6">
+                <svg class="w-4 h-4 text-archivex-neon" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"></path>
+                </svg>
+                <span class="text-archivex-neon font-heading font-bold tracking-wider text-xs uppercase">DİJİTAL ARŞİV ÇÖZÜMLERİ</span>
+            </div>
+            
             <h1 class="text-4xl md:text-6xl font-heading font-extrabold text-white mb-6 leading-tight tracking-tight">
                 Kağıt Evraklarınızı <br>
                 <span class="text-transparent bg-clip-text bg-gradient-to-r from-archivex-neon to-white">Aranabilir Akıllı PDF'lere</span> Dönüştürüyoruz.
@@ -104,7 +132,12 @@
         <div class="grid md:grid-cols-3 gap-8">
             <!-- Kart 1 -->
             <div class="bg-archivex-card/40 p-8 rounded-2xl border border-white/5 hover:border-archivex-neon/20 transition-all duration-300">
-                <div class="text-3xl mb-4">🔍</div>
+                <!-- Yenilenen SVG İkon (Arama/OCR) -->
+                <div class="w-12 h-12 rounded-xl bg-archivex-neon/10 flex items-center justify-center text-archivex-neon mb-6">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                    </svg>
+                </div>
                 <h4 class="text-xl font-heading font-bold text-white mb-3">Aranabilir Akıllı PDF (OCR)</h4>
                 <p class="text-sm text-gray-400 leading-relaxed">
                     Taranan evraklar sadece resim olarak kalmaz. Optik Karakter Tanımlama (OCR) teknolojisi sayesinde, binlerce sayfalık arşivde tek bir kelimeyi aratarak saniyeler içinde ilgili evraka ulaşırsınız.
@@ -113,7 +146,12 @@
 
             <!-- Kart 2 -->
             <div class="bg-archivex-card/40 p-8 rounded-2xl border border-white/5 hover:border-archivex-neon/20 transition-all duration-300">
-                <div class="text-3xl mb-4">🔒</div>
+                <!-- Yenilenen SVG İkon (Şifreli Güvenlik) -->
+                <div class="w-12 h-12 rounded-xl bg-archivex-neon/10 flex items-center justify-center text-archivex-neon mb-6">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+                    </svg>
+                </div>
                 <h4 class="text-xl font-heading font-bold text-white mb-3">Yüksek Güvenlikli Teslimat</h4>
                 <p class="text-sm text-gray-400 leading-relaxed">
                     Dijitalleştirilen belgeleriniz, askeri düzeyde şifrelenmiş (AES-256) ve şifre korumalı dijital paketler halinde doğrudan yetkili kişiye güvenli kanallar üzerinden teslim edilir.
@@ -122,7 +160,12 @@
 
             <!-- Kart 3 -->
             <div class="bg-archivex-card/40 p-8 rounded-2xl border border-white/5 hover:border-archivex-neon/20 transition-all duration-300">
-                <div class="text-3xl mb-4">💼</div>
+                <!-- Yenilenen SVG İkon (Yasal Koruma/KVKK) -->
+                <div class="w-12 h-12 rounded-xl bg-archivex-neon/10 flex items-center justify-center text-archivex-neon mb-6">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                    </svg>
+                </div>
                 <h4 class="text-xl font-heading font-bold text-white mb-3">%100 KVKK Uyumluluğu</h4>
                 <p class="text-sm text-gray-400 leading-relaxed">
                     Kişisel verileri barındıran hassas evraklarınız, Kişisel Verilerin Korunması Kanunu standartlarına tam uyumlu prosedürlerle taranır ve saklanır. Sızıntı riskleri sıfıra indirilir.
@@ -152,7 +195,8 @@
                     </li>
                 </ul>
             </div>
-            <!-- Görsel Alanı veya Şık Grafik Kutusu -->
+            
+            <!-- Süreç Kutusu -->
             <div class="bg-archivex-card/50 p-8 rounded-2xl border border-white/5 shadow-2xl relative overflow-hidden">
                 <div class="absolute -right-10 -bottom-10 w-40 h-40 bg-archivex-neon/5 rounded-full blur-2xl"></div>
                 <h4 class="text-lg font-heading font-bold text-white mb-4">🔒 SÜREÇ NASIL İŞLİYOR?</h4>
@@ -183,15 +227,21 @@
         </div>
     </section>
 
-    <!-- 03. Blog / Sektörel Rehber Alanı (Dynamic Content) -->
+    <!-- 03. Yenilenen Sektörel Rehber & E-Arşiv Konuşmacıları Alanı -->
     <section id="rehber" class="max-w-5xl mx-auto px-6 py-20">
         <div class="text-center md:text-left mb-12">
-            <h2 class="text-sm font-heading font-bold text-archivex-neon tracking-widest uppercase mb-2">📚 BİLGİ MERKEZİ</h2>
-            <h3 class="text-3xl font-heading font-bold text-white">Dijitalleşme Rehberi & Sektörel Yazılar</h3>
-            <p class="text-gray-400 mt-2">Admin panelinden eklediğiniz son makaleler ve arşivleme trendleri.</p>
+            <!-- Yenilenen Orantılı SVG Mikrofon/Konuşma İkonu -->
+            <div class="inline-flex items-center gap-2 bg-archivex-neon/10 border border-archivex-neon/20 px-3 py-1.5 rounded-full mb-3">
+                <svg class="w-4 h-4 text-archivex-neon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"></path>
+                </svg>
+                <span class="text-archivex-neon font-heading font-bold tracking-wider text-xs uppercase">E-ARŞİVLEME KONUŞMALARI & GÖRÜŞLER</span>
+            </div>
+            <h3 class="text-3xl font-heading font-bold text-white">Sektörel Rehber & Uzman Görüşleri</h3>
+            <p class="text-gray-400 mt-2">Sektör liderlerinin dijital arşivleme panellerindeki önemli sunumları, konuşma metinleri ve rehber içerikleri.</p>
         </div>
         
-        <!-- CMS'DEN DİNAMİK OLARAK ÇEKİLEN YAZILAR BURAYA ENJEKTE EDİLECEK -->
+        <!-- CMS Yazıları Buraya Gelecek (Renk paletleri otomatik neon turkuaz ve gece mavisidir) -->
         <div class="space-y-8">
             {{articles}}
         </div>
